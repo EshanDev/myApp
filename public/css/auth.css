@@ -36,7 +36,7 @@ body header {
 }
 @media (min-width: 1000px) {
   body header {
-    height: 90px;
+    height: 80px;
   }
 }
 body .main {
@@ -61,6 +61,87 @@ body div.main footer {
 }
 body.position-left {
   margin-left: 270px;
+}
+
+.auth .content {
+  margin-top: 25px;
+}
+@media (min-width: 780px) {
+  .auth .content {
+    margin-top: 90px;
+  }
+}
+.auth .content .content-header .text-center {
+  line-height: 1.2;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+@media (min-width: 780px) {
+  .auth .content .content-header .text-center {
+    font-size: 1.6rem;
+  }
+}
+.auth .content .content-body p {
+  text-indent: 30px;
+}
+@media (min-width: 780px) {
+  .auth .content .content-body p.text-into {
+    text-indent: 50px;
+    font-size: 18px;
+    font-weight: 300;
+  }
+}
+@media (min-width: 1000px) {
+  .auth .content .content-body {
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+.auth .content .text-author {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+@media (min-width: 1000px) {
+  .auth .content .text-author {
+    justify-content: flex-end;
+    padding-top: 15px;
+    padding-right: 100px;
+  }
+}
+.auth .content .text-author .group-text {
+  text-align: center;
+}
+.auth .content .text-author .group-text p {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+.auth .content .text-author .group-text p:last-of-type {
+  font-size: 16px;
+  font-weight: 400;
+}
+.auth .content .line {
+  width: 300px;
+  margin: 0 auto;
+  border-bottom: 1px dotted rgba(95, 95, 95, 0.322);
+  margin-top: 15px;
+}
+.auth .content .line::before {
+  content: "";
+}
+.auth .content .conditions .conditions-header {
+  margin-top: 25px;
+  font-size: 19px;
+  font-weight: 500;
+}
+@media (min-width: 1000px) {
+  .auth .content .text-author,
+.auth .content .conditions {
+    width: 800px;
+    margin: 0 auto;
+  }
 }
 
 /* Mixins A Breakpoint */

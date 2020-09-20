@@ -1,4 +1,30 @@
 <div class="auth container-fluid">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste iure maiores natus neque nobis porro praesentium quae ullam. Culpa eos explicabo illum itaque iure laborum qui quisquam sequi tempora voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cum, debitis dolores eos, fuga in incidunt ipsa iusto laborum natus nobis non obcaecati praesentium quos repellat reprehenderit suscipit tenetur vero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam deserunt eveniet laborum maiores nam qui recusandae reiciendis sit temporibus tenetur. Deleniti dolorem eos facere nam pariatur recusandae? Eos, illo, suscipit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dignissimos esse et, ex harum illum minima minus optio pariatur porro provident quia reprehenderit rerum sit totam vel voluptas. Est, ut! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque deleniti dolor eligendi itaque nemo nihil quaerat, saepe similique tempore vero! Dolores in quasi rerum sequi soluta? Debitis perspiciatis quis vel! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur doloremque dolorum ex exercitationem, fuga iure odio praesentium quam sapiente soluta ullam unde voluptatem. Atque dolore eos iusto perferendis sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eos, tempora! Ab aperiam autem, consequuntur error eum incidunt magnam magni molestiae obcaecati perferendis, quis recusandae sint veniam? Nostrum, perspiciatis, quasi.</p>
-
+    <div class="content">
+        <div class="content-header">
+            <div class="text-center">
+                <div>ข้อตกลง/เงื่อนไข</div>
+                <div>และผู้มีสิทธิ์ลงทะเบียน</div>
+            </div>
+        </div>
+        <div class="content-body">
+            <p class="text-into">เว็บฝึกอบรมนี้ พัฒนาขึ้นเพื่อใช้เป็นเครื่องมือในการศึกษาวิจัย เงื่อนไข ข้อตกลง
+                รวมทั้งผู้ที่มีสิทธิ์ในการลงทะเบียนได้ถูกกำหนดไว้ ดังนั้น
+                เพื่อให้สอดคล้องกับวัตถุประสงค์และเป็นไปตามกระบวนการในการศึกษาวิจัย
+                ผู้วิจัยขอความร่วมมือนักศึกษาที่สนใจสมัครเข้าใช้งานเว็บฝึกอบรม ทำความเข้าใจในข้อตกลง เงื่อนไข
+                และยอมรับข้อตกลงต่าง ๆ ก่อนลงทะเบียน เพื่อให้กระบวนการศึกษาวิจัยได้ดำเนินไปอย่างมีประสิทธิภาพ</p>
+        </div>
+        <div class="text-author">
+            <div class="group-text">
+                <p>ธีรพงษ์ บัวงาม</p>
+                <p>นักวิชาการโสตทัศนศึกษา ปฎิบัติการ</p>
+            </div>
+        </div>
+        <div class="line"></div>
+<br>
+        <div class="conditions">
+            <div class="conditions-header">
+                <div>ข้อตกลง / เงื่อนไข</div>
+            </div>
+        </div>
+    </div>
 </div>

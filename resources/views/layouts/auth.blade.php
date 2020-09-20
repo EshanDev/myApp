@@ -30,7 +30,7 @@
         <main id="app">
         @include('.partials.auth_content')
         </main>
-        <footer>footer</footer>
+        <footer>&copy; {{ date('Y') }} {{ config('app.name') }} All right reserved</footer>
     </div>
 
 

@@ -1,0 +1,103 @@
+.auth {
+    .content {
+        margin-top: 25px;
+
+        @include breakpoint(780px, min) {
+            margin-top: 90px;
+        }
+
+        .content-header {
+            .text-center {
+                line-height: 1.2;
+                margin-bottom: 15px;
+                font-size: 1.5rem;
+
+                @include breakpoint(780px, min) {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+
+        .content-body {
+            p {
+                text-indent: 30px;
+
+                @include breakpoint(780px, min) {
+                    &.text-into {
+                        text-indent: 50px;
+                        font-size: 18px;
+                        font-weight: 300;
+                    }
+                }
+            }
+
+
+            @include breakpoint(1000px, min) {
+                width: 800px;
+                margin: 0 auto;
+            }
+
+
+
+        }
+
+        .text-author {
+            display: flex;
+            justify-content: center;
+
+            @include breakpoint(1000px, min) {
+                justify-content: flex-end;
+                padding-top: 15px;
+                padding-right: 100px;
+            }
+
+            .group-text {
+                text-align: center;
+
+                p {
+                    font-size: 18px;
+                    font-weight: 500;
+                    margin: 0;
+                    padding: 0;
+
+                    &:last-of-type {
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+                }
+            }
+
+            padding-bottom: 20px;
+
+        }
+
+        .line {
+            width: 300px;
+            margin: 0 auto;
+            border-bottom: 1px dotted rgba(95, 95, 95, 0.322);
+            margin-top: 15px;
+        }
+
+        .line::before {
+            content: '';
+
+        }
+
+        .conditions {
+            .conditions-header {
+                margin-top: 25px;
+                font-size: 19px;
+                font-weight: 500;
+            }
+        }
+
+        @include breakpoint(1000px, min) {
+
+            .text-author,
+            .conditions {
+                width: 800px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
