@@ -1,240 +1,88 @@
-.auth {
-    .content {
-        margin-top: 25px;
+.auth{
+    .content{
 
-        @include breakpoint(780px, min) {
-            margin-top: 50px;
+        /* Content Header */
+        .content-header{
+            font-size: 1.89em;
+            line-height: 1.08;
+            margin-bottom: 25px;
+
+            @include breakpoint(780px, max)
+            {
+                margin: 25px 0;
+            }
         }
 
-        .content-header {
-            .text-center {
-                line-height: 1.2;
-                margin-bottom: 15px;
-                font-size: 1.5rem;
 
-                @include breakpoint(780px, min) {
-                    font-size: 1.6rem;
+        /* Condition into */
+        .conditions-into{
+            background-color: rgba(242, 132, 20, 0.05);
+            padding: 10px 15px !important;
+
+            margin: 40px 0;
+
+
+            /* Alert box */
+            &.alert-dismissible{
+                //padding: 0 !important;
+            }
+
+            /* Close Btn */
+            .close{
+                cursor: pointer;
+                padding: 0 !important;
+                text-align: center;
+                width: 300px;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+                top: -37px;
+                font-size: 2.5em;
+                color: #f23311;
+            }
+
+            /* Content body */
+            .content-body{
+                .text-into{
+                    @include breakpoint(1200px, max)
+                    {
+                        font-size: 18px;
+                        font-weight: 300;
+                        text-indent: 50px;
+                        line-height: 1.3;
+                    }
                 }
             }
-        }
-
-        @include breakpoint(1000px, min) {
-            .conditions {
-                width: 800px;
-                margin: 0 auto;
-            }
-        }
-
-        @include breakpoint(1400px, min){
-            margin-top: 150px !important;
-
-            .content-header{
-                .text-center{
-                    font-size: 2.1rem;
-                }
-            }
-            .conditions {
-                width: 60%;
-                margin: 0 auto;
-            }
 
         }
 
-    }
+
+        /*  Conditions */
+        .conditions{
+            padding-left: 15px;
+            padding-right: 15px;
 
 
 
 
 
 
-    /*  Condition */
 
-    .conditions{
 
-        .conditions-nav{
-            line-height: 1.4;
-            list-style-type: none;
-            .conditions-item{
-                text-indent: 30px;
-            }
-            .text-list{
-                font-size: 1.12em;
-                font-weight: 400;
-            }
-        }
-
-        @include breakpoint(780px, max){
+            /* Conditions Header */
             .conditions-header{
                 font-size: 1.3em;
-                margin-bottom: 10px;
-                text-align: center;
-
-            }
-
-            .conditions-list{
-                .conditions-nav{
-                    .conditions-item{
-                        font-size: 14px;
-                    }
-                }
             }
         }
 
-        @include breakpoint(1280px, max){
-            @include breakpoint(780px, min){
-                .conditions-header{
-                    font-size: 1.4em;
-                    margin-top: 15px;
-                    margin-bottom: 10px;
 
-                }
-            }
-        }
-        @include breakpoint(1280px, min){
-            .conditions-header{
-                font-size: 1.56em;
-                margin-top: 15px;
-                margin-bottom: 10px;
-
-            }
-            .conditions-list{
-                .conditions-nav{
-                    .conditions-item{
-                        font-size: 20px;
-                        font-weight: 300;
-                    }
-                }
-            }
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-    /* Alert */
-
-    .group-text{
-
-        &.alert{
-            font-weight: 300;
-            width: 100%;
-            margin: 0 auto;
-            padding: 16px;
-            background-color: rgba(220, 118, 51, 0.04);
-            @include breakpoint(1000px, min){
-                width: 800px;
-            }
-            @include breakpoint(1400px, min){
-                width: 60%;
-            }
-
-            /* Close Button */
-            .close{
-                color: #ac071a;
-                font-size: 1.4em;
-                position: absolute;
-                top: -10px;
-                right: -13px;
-                font-weight: 700;
-            }
-            /* Content body */
-
-            .content-body{
-                font-size: 14px;
-                line-height: 1.3;
-                .text-into{
-                    text-indent: 30px;
-                }
-                @include breakpoint(780px, max)
-                {
-                    font-size: 15px;
-                }
-                @include breakpoint(1000px, min){
-                    font-size: 20px;
-                    font-weight: 300;
-                    line-height: 1.45;
-                }
-            }
-
-            /* Text Author */
-
-            .text-author{
-                @include breakpoint(780px, max)
-                {
-                    .group-text{
-                        line-height: 1.3;
-                        text-align: center;
-                        p{
-                            margin: 0;
-                            padding: 0;
-                            font-size: 16px;
-                            font-weight: 400;
-                            &:last-of-type{
-                                font-weight: 300;
-                                font-size: 14px;
-                            }
-                        }
-                    }
-                }
-
-
-                @include breakpoint(1000px, max){
-                    @include  breakpoint(780px, min)
-                    {
-                        display: flex;
-                        justify-content: flex-end;
-                        margin-right: 50px;
-                        .group-text{
-                            line-height: 1.3;
-                            text-align: center;
-                            p{
-                                margin: 0;
-                                padding: 0;
-                                font-size: 16px;
-                                font-weight: 400;
-                                &:last-of-type{
-                                    font-weight: 300;
-                                    font-size: 14px;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                @include breakpoint(1000px, min){
-                    display: flex;
-                    justify-content: flex-end;
-                    margin-right: 50px;
-                    .group-text{
-                        line-height: 1.3;
-                        text-align: center;
-                        p{
-                            margin: 0;
-                            padding: 0;
-                            font-size: 20px;
-                            font-weight: 400;
-                            &:last-of-type{
-                                font-weight: 300;
-                                font-size: 18px;
-                            }
-                        }
-                    }
-                }
-            }
-
-
-        }
 
     }
 
 
 
-
+    /* UL list-style-type = none */
+    .conditions-nav{
+        list-style-type: none;
+    }
 }

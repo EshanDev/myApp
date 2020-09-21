@@ -8,9 +8,9 @@
         </div>
 
 
-        <!-- Start Group Text -->
-        <div class="group-text alert  alert-dismissible" role="alert">
-            <div class="close" data-dismiss="alert" aria-label="close"><i class="fal fa-times"></i></div>
+        <!-- Conditions into start -->
+        <div class="conditions-into alert  alert-dismissible" role="alert">
+            <div class="close" data-dismiss="alert" aria-label="close"><i class="fal fa-times-circle"></i></div>
             <div class="content-body">
                 <p class="text-into">เว็บฝึกอบรมนี้ พัฒนาขึ้นเพื่อใช้เป็นเครื่องมือในการศึกษาวิจัย เงื่อนไข ข้อตกลง
                     รวมทั้งผู้ที่มีสิทธิ์ในการลงทะเบียนได้ถูกกำหนดไว้ ดังนั้น
@@ -25,9 +25,10 @@
                 </div>
             </div>
         </div>
-        <!-- End Group Text -->
+        <!-- Conditions into stop -->
 
 
+        <!-- Conditions Start -->
         <div class="conditions">
             <div class="conditions-header">
                 <div>ผู้มีสิทธิ์ลงทะเบียน</div>
@@ -63,21 +64,21 @@
                 </ul>
             </div>
         </div>
+        <!-- Conditions Stop -->
     </div>
 </div>
-<div class="alert alert-success" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <strong>Success!</strong> You have been signed in successfully!
-</div>
 
 
+
+@section('script')
     <script>
 
-            window.setTimeout(function() {
-                $(".alert").fadeTo(500, 0).slideUp(500, function(){
-                    $(this).remove();
-                });
-            }, 30000);
+        // window.setTimeout(function() {
+        //     $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        //         $(this).remove();
+        //     });
+        // }, 30000);
 
     </script>
+@endsection
 
