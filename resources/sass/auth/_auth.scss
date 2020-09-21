@@ -41,8 +41,8 @@ body {
         grid-area: header;
         display: flex;
         align-items: center;
-        @include breakpoint(1000px, min){
-            height: 80px;
+        @include breakpoint(2000px, min){
+            height: 100px;
         }
 
     }
