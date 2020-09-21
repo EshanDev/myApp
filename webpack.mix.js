@@ -19,5 +19,5 @@ mix.js('resources/js/app.js', 'public/js')
     .options({
         processCssUrls: false
     })
-    .browserSync('http://apps.sdl');
+    .browserSync('localhost:8000');
 

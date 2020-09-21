@@ -55,10 +55,10 @@
         }
     }
 }
-@include breakpoint(1800px, min){
+@include breakpoint(1400px, min){
     .auth{
         &.container-fluid{
-            width: 1411px;
+            width: 60%;
             padding: 0;
         }
     }

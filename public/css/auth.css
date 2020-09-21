@@ -39,6 +39,11 @@ body header {
     height: 80px;
   }
 }
+@media (min-width: 1400px) {
+  body header {
+    margin-top: 50px;
+  }
+}
 body .main {
   overflow-y: auto;
   grid-area: main;
@@ -63,12 +68,16 @@ body.position-left {
   margin-left: 270px;
 }
 
+.auth {
+  /*  Condition */
+  /* Alert */
+}
 .auth .content {
   margin-top: 25px;
 }
 @media (min-width: 780px) {
   .auth .content {
-    margin-top: 90px;
+    margin-top: 50px;
   }
 }
 .auth .content .content-header .text-center {
@@ -81,66 +90,166 @@ body.position-left {
     font-size: 1.6rem;
   }
 }
-.auth .content .content-body p {
+@media (min-width: 1000px) {
+  .auth .content .conditions {
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1400px) {
+  .auth .content {
+    margin-top: 150px !important;
+  }
+  .auth .content .content-header .text-center {
+    font-size: 2.1rem;
+  }
+  .auth .content .conditions {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+.auth .conditions .conditions-nav {
+  line-height: 1.4;
+  list-style-type: none;
+}
+.auth .conditions .conditions-nav .conditions-item {
   text-indent: 30px;
 }
-@media (min-width: 780px) {
-  .auth .content .content-body p.text-into {
-    text-indent: 50px;
-    font-size: 18px;
+.auth .conditions .conditions-nav .text-list {
+  font-size: 1.12em;
+  font-weight: 400;
+}
+@media (max-width: 780px) {
+  .auth .conditions .conditions-header {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .auth .conditions .conditions-list .conditions-nav .conditions-item {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1280px) and (min-width: 780px) {
+  .auth .conditions .conditions-header {
+    font-size: 1.4em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 1280px) {
+  .auth .conditions .conditions-header {
+    font-size: 1.56em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  .auth .conditions .conditions-list .conditions-nav .conditions-item {
+    font-size: 20px;
     font-weight: 300;
   }
 }
-@media (min-width: 1000px) {
-  .auth .content .content-body {
-    width: 800px;
-    margin: 0 auto;
-  }
-}
-.auth .content .text-author {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 20px;
-}
-@media (min-width: 1000px) {
-  .auth .content .text-author {
-    justify-content: flex-end;
-    padding-top: 15px;
-    padding-right: 100px;
-  }
-}
-.auth .content .text-author .group-text {
-  text-align: center;
-}
-.auth .content .text-author .group-text p {
-  font-size: 18px;
-  font-weight: 500;
-  margin: 0;
-  padding: 0;
-}
-.auth .content .text-author .group-text p:last-of-type {
-  font-size: 16px;
-  font-weight: 400;
-}
-.auth .content .line {
-  width: 300px;
+.auth .group-text.alert {
+  font-weight: 300;
+  width: 100%;
   margin: 0 auto;
-  border-bottom: 1px dotted rgba(95, 95, 95, 0.322);
-  margin-top: 15px;
-}
-.auth .content .line::before {
-  content: "";
-}
-.auth .content .conditions .conditions-header {
-  margin-top: 25px;
-  font-size: 19px;
-  font-weight: 500;
+  padding: 16px;
+  background-color: rgba(220, 118, 51, 0.04);
+  /* Close Button */
+  /* Content body */
+  /* Text Author */
 }
 @media (min-width: 1000px) {
-  .auth .content .text-author,
-.auth .content .conditions {
+  .auth .group-text.alert {
     width: 800px;
-    margin: 0 auto;
+  }
+}
+@media (min-width: 1400px) {
+  .auth .group-text.alert {
+    width: 60%;
+  }
+}
+.auth .group-text.alert .close {
+  color: #ac071a;
+  font-size: 1.4em;
+  position: absolute;
+  top: -10px;
+  right: -13px;
+  font-weight: 700;
+}
+.auth .group-text.alert .content-body {
+  font-size: 14px;
+  line-height: 1.3;
+}
+.auth .group-text.alert .content-body .text-into {
+  text-indent: 30px;
+}
+@media (max-width: 780px) {
+  .auth .group-text.alert .content-body {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1000px) {
+  .auth .group-text.alert .content-body {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.45;
+  }
+}
+@media (max-width: 780px) {
+  .auth .group-text.alert .text-author .group-text {
+    line-height: 1.3;
+    text-align: center;
+  }
+  .auth .group-text.alert .text-author .group-text p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .auth .group-text.alert .text-author .group-text p:last-of-type {
+    font-weight: 300;
+    font-size: 14px;
+  }
+}
+@media (max-width: 1000px) and (min-width: 780px) {
+  .auth .group-text.alert .text-author {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+  }
+  .auth .group-text.alert .text-author .group-text {
+    line-height: 1.3;
+    text-align: center;
+  }
+  .auth .group-text.alert .text-author .group-text p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .auth .group-text.alert .text-author .group-text p:last-of-type {
+    font-weight: 300;
+    font-size: 14px;
+  }
+}
+@media (min-width: 1000px) {
+  .auth .group-text.alert .text-author {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+  }
+  .auth .group-text.alert .text-author .group-text {
+    line-height: 1.3;
+    text-align: center;
+  }
+  .auth .group-text.alert .text-author .group-text p {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .auth .group-text.alert .text-author .group-text p:last-of-type {
+    font-weight: 300;
+    font-size: 18px;
   }
 }
 
@@ -151,6 +260,7 @@ body.position-left {
   background: #ffffff;
   height: 100%;
   /* Sidebar Visible only 480px*/
+  /* visible on min 1300px */
 }
 .auth-navbar a {
   color: #6f6f6f;
@@ -266,6 +376,19 @@ body.position-left {
   padding: 8px 15px;
   display: block;
 }
+@media (min-width: 1400px) {
+  .auth-navbar .navbar-header {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+  .auth-navbar .navbar-header .icons::before {
+    font-size: 3rem !important;
+  }
+  .auth-navbar .links {
+    font-size: 20px;
+    font-weight: 300;
+  }
+}
 
 /* Mixins A Breakpoint */
 @media (max-width: 320px) {
@@ -305,9 +428,9 @@ body.position-left {
     width: 1191px;
   }
 }
-@media (min-width: 1800px) {
+@media (min-width: 1400px) {
   .auth.container-fluid {
-    width: 1411px;
+    width: 60%;
     padding: 0;
   }
 }
