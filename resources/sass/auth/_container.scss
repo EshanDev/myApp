@@ -1,65 +1,15 @@
 @import "../mixins/breakpoint";
-
-@include breakpoint(320px, max){
-    .auth{
-        &.container-fluid{
-            width: 100%;
-            padding-left: 15px;
-            padding-right: 15px;
+.auth{
+    &.container-fluid{
+        @include breakpoint(2000px, max){
+            @include breakpoint(1400px, min){
+                width: 80%;
+                margin: 0 auto;
+            }
         }
-    }
-}
-
-@include breakpoint(1024px, min){
-    .auth{
-        &.container-fluid{
-            width: 800px;
-        }
-    }
-}
-
-@include breakpoint(700px, min){
-    .auth{
-        &.container-fluid{
-            width: 580px;
-        }
-    }
-
-}
-@include breakpoint(800px, min){
-    .auth{
-        &.container-fluid{
-            width: 680px;
-        }
-    }
-}
-@include breakpoint(1000px, min){
-    .auth{
-        &.container-fluid{
-            width: 780px;
-        }
-    }
-}
-@include breakpoint(1200px, min){
-    .auth{
-        &.container-fluid{
-            width: 999px;
-        }
-    }
-}
-@include breakpoint(1300px, min)
-{
-    .auth{
-        &.container-fluid{
-            width: 1191px;
-        }
-    }
-}
-@include breakpoint(1400px, min){
-    .auth{
-        &.container-fluid{
+        @include breakpoint(2000px, min){
             width: 60%;
-            padding: 0;
+            margin: 0 auto;
         }
     }
 }

@@ -1,5 +1,8 @@
 .auth{
     .content{
+        width: 100%;
+        margin: 0 auto;
+        background-color: green;
 
         /* Content Header */
         .content-header{
@@ -84,5 +87,18 @@
     /* UL list-style-type = none */
     .conditions-nav{
         list-style-type: none;
+    }
+
+
+    /* Media Query*/
+    @include breakpoint(1300px, max)
+    {
+        @include breakpoint(1200px, min)
+        {
+            .content{
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
     }
 }
