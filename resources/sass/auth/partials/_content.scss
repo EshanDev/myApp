@@ -168,6 +168,8 @@
             .conditions-item{
                 font-size: 18px;
                 font-weight: 300;
+                padding-left: 25px;
+                text-indent: 30px;
             }
         }
 
@@ -191,12 +193,29 @@
             margin: 0 auto;
         }
     }
-    @include breakpoint(1000px, max)
+
+
+
+
+    @include breakpoint(1200px, max)
     {
         @include breakpoint(700px, min)
         {
             .content{
                 width: 700px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+
+    @include breakpoint(2000px, max)
+    {
+        @include breakpoint(1200px, min)
+        {
+            .content{
+                padding-top: 80px;
+                width: 900px;
                 margin: 0 auto;
             }
         }

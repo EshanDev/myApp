@@ -50,7 +50,7 @@
             <div class="conditions-list">
                 <ul class="conditions-nav">
                     <li class="conditions-item">
-                        <span class="text-list">1.</span> ระบบการยืนยันสิทธิ์ในการลงทะเบียนจะถูกจำกัดไว้เพียง 30 สิทธิ์ สำหรับผู้ที่ยืนยันสิทธิ์และลงทะเบียนเรียบร้อยเท่านั้น
+                        <span class="text-list">1.</span> การลงทะเบียนจะถูกจำกัดไว้เพียง 30 สิทธิ์ สำหรับผู้ที่ยืนยันสิทธิ์เรียบร้อยเท่านั้น
                     </li>
                     <li class="conditions-item">
                         <span class="text-list">2.</span> นักศึกษาที่ได้รับสิทธิ์ใช้งานเว็บฝึกอบรม จะได้รับสิทธิ์ การใช้งานในนามของผู้เข้าอบรม และต้องให้ความร่วมมือในการจัดการศึกษาวิจัย โดยดำเนินการใช้งานเว็บฝึกอบรมเป็นไปตามที่ระบบจัดเตรียมไว้ให้
@@ -68,16 +68,18 @@
     </div>
 </div>
 
+@include('partials.auth_conditions')
+
 
 
 @section('script')
     <script>
 
-        // window.setTimeout(function() {
-        //     $(".alert").fadeTo(500, 0).slideUp(500, function(){
-        //         $(this).remove();
-        //     });
-        // }, 30000);
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 30000);
 
     </script>
 @endsection

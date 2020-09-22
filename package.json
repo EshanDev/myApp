@@ -26,6 +26,8 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.14.0"
+        "@fortawesome/fontawesome-free": "^5.14.0",
+        "jquery-validation": "^1.19.2",
+        "validate.js": "^0.13.1"
     }
 }

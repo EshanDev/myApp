@@ -153,6 +153,8 @@ body.position-left {
 .auth .content .conditions .conditions-item {
   font-size: 18px;
   font-weight: 300;
+  padding-left: 25px;
+  text-indent: 30px;
 }
 .auth .conditions-nav {
   list-style-type: none;
@@ -163,9 +165,80 @@ body.position-left {
     margin: 0 auto;
   }
 }
-@media (max-width: 1000px) and (min-width: 700px) {
+@media (max-width: 1200px) and (min-width: 700px) {
   .auth .content {
     width: 700px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 2000px) and (min-width: 1200px) {
+  .auth .content {
+    padding-top: 80px;
+    width: 900px;
+    margin: 0 auto;
+  }
+}
+
+.auth .conditions-form {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+.auth .conditions-form .form-header {
+  padding-top: 25px;
+  padding-bottom: 10px;
+  font-size: 1.3em;
+}
+.auth .conditions-form .group-form {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  row-gap: 1rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+@media (max-width: 480px) {
+  .auth .conditions-form .group-form {
+    width: 100%;
+    flex-direction: column;
+    row-gap: 0;
+    -moz-column-gap: 0;
+         column-gap: 0;
+  }
+}
+@media (min-width: 480px) {
+  .auth .conditions-form .group-form {
+    width: 90%;
+  }
+}
+.auth .conditions-form .group-form label[for=student_code], .auth .conditions-form .group-form label[for=student_email] {
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 300;
+}
+.auth .conditions-form .form-footer {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.auth .conditions-form .form-footer .btn {
+  width: 200px;
+}
+.auth .conditions-form label.error {
+  color: red;
+}
+@media (max-width: 1200px) and (min-width: 700px) {
+  .auth .conditions-form {
+    width: 700px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 2000px) and (min-width: 1200px) {
+  .auth .conditions-form {
+    width: 900px;
     margin: 0 auto;
   }
 }
@@ -178,7 +251,7 @@ body.position-left {
   height: 100%;
   /* Sidebar Visible only 480px*/
 }
-@media (min-width: 1300px) {
+@media (min-width: 1200px) {
   .auth-navbar {
     padding-top: 50px;
   }

@@ -5,7 +5,7 @@
     width: 100%;
     background: transparent;
     height: 100%;
-    @include breakpoint(1300px, min)
+    @include breakpoint(1200px, min)
     {padding-top: 50px;}
 
 
