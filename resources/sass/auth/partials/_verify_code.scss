@@ -1,0 +1,32 @@
+.auth {
+    .verify-coded {
+        max-width: 80%;
+        margin: 0 auto;
+        @include breakpoint(780px, max) {
+            max-width: 100%;
+            padding: 0 15px;
+        }
+        .custom-fieldset {
+            padding-left: 15px;
+            padding-right: 15px;
+            .legend {
+                font-size: 18px;
+                font-weight: 300;
+            }
+
+            .grid-container {
+                display: grid;
+                grid-template-columns: 3fr 2fr 2fr;
+                grid-gap: 1em;
+                @include breakpoint(600px, max) {
+                    grid-template-columns: 1fr;
+                    grid-gap: 0;
+                }
+                ::placeholder {
+                    font-weight: 200;
+                    color: rgb(140, 140, 140);
+                }
+            }
+        }
+    }
+}

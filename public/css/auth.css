@@ -159,15 +159,9 @@ body.position-left {
 .auth .conditions-nav {
   list-style-type: none;
 }
-@media (max-width: 700px) {
+@media (max-width: 1200px) and (min-width: 780px) {
   .auth .content {
     width: 100%;
-    margin: 0 auto;
-  }
-}
-@media (max-width: 1200px) and (min-width: 700px) {
-  .auth .content {
-    width: 700px;
     margin: 0 auto;
   }
 }
@@ -253,6 +247,48 @@ body.position-left {
     width: 900px;
     margin: 0 auto;
   }
+}
+
+.auth .verify-coded {
+  max-width: 80%;
+  margin: 0 auto;
+}
+@media (max-width: 780px) {
+  .auth .verify-coded {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+.auth .verify-coded .custom-fieldset {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.auth .verify-coded .custom-fieldset .legend {
+  font-size: 18px;
+  font-weight: 300;
+}
+.auth .verify-coded .custom-fieldset .grid-container {
+  display: grid;
+  grid-template-columns: 3fr 2fr 2fr;
+  grid-gap: 1em;
+}
+@media (max-width: 600px) {
+  .auth .verify-coded .custom-fieldset .grid-container {
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+  }
+}
+.auth .verify-coded .custom-fieldset .grid-container ::-moz-placeholder {
+  font-weight: 200;
+  color: #8c8c8c;
+}
+.auth .verify-coded .custom-fieldset .grid-container :-ms-input-placeholder {
+  font-weight: 200;
+  color: #8c8c8c;
+}
+.auth .verify-coded .custom-fieldset .grid-container ::placeholder {
+  font-weight: 200;
+  color: #8c8c8c;
 }
 
 /* Mixins A Breakpoint */

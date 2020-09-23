@@ -1,6 +1,6 @@
 @import "../variables";
 @import "../mixins/fonts";
-@import '../mixins/breakpoint';
+@import "../mixins/breakpoint";
 
 *,
 *::before,
@@ -20,19 +20,16 @@ body {
     @include Prompt();
 }
 
-
 body {
-    transition: all .4s ease;
+    transition: all 0.4s ease;
 
     display: grid;
-    grid-template-areas: "header header header header""main main main main";
+    grid-template-areas: "header header header header" "main main main main";
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 60px 1fr;
 
-
     min-height: 100vh;
     width: 100%;
-
 
     header {
         position: fixed;
@@ -41,10 +38,9 @@ body {
         grid-area: header;
         display: flex;
         align-items: center;
-        @include breakpoint(2000px, min){
+        @include breakpoint(2000px, min) {
             height: 100px;
         }
-
     }
 
     .main {
@@ -54,7 +50,7 @@ body {
 
     div.main {
         display: grid;
-        grid-template-areas: "content""footer";
+        grid-template-areas: "content" "footer";
         grid-template-rows: 1fr 50px;
         grid-template-columns: 1fr;
 
@@ -76,6 +72,6 @@ body {
     }
 }
 
-
-@import '../auth/partials/content';
-@import '../auth/partials/conditions_form';
+@import "../auth/partials/content";
+@import "../auth/partials/conditions_form";
+@import "../auth/partials/verify_code";
