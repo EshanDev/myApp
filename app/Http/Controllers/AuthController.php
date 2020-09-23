@@ -23,10 +23,11 @@ class AuthController extends Controller
         $student_code = Session::get('student_code');
         $student_email = Session::get('student_email');
         $serial = Session::get('serial');
+        $username = generateUserName();
 
 
 
-        return view('system.registration', compact('student_code', 'student_email', 'code', 'serial'));
+        return view('system.registration', compact('student_code', 'student_email', 'code', 'serial', 'username'));
     }
 
 

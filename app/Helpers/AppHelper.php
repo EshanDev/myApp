@@ -22,3 +22,15 @@ if (!function_exists('getSerial')){
         return implode('-', str_split(substr(strtoupper($hash), 0, 20), 5));
     }
 }
+
+if(!function_exists('generateUserName')){
+    function generateUserName($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return "USER-".$randomString;
+    }
+}
