@@ -149,11 +149,11 @@ body.position-left {
 }
 .auth .content .conditions .conditions-header {
   font-size: 1.5em;
+  margin-bottom: 10px;
 }
 .auth .content .conditions .conditions-item {
   font-size: 18px;
   font-weight: 300;
-  padding-left: 25px;
   text-indent: 30px;
 }
 .auth .conditions-nav {
@@ -178,6 +178,13 @@ body.position-left {
     margin: 0 auto;
   }
 }
+@media (min-width: 2000px) {
+  .auth .content {
+    padding-top: 90px;
+    width: 1000px;
+    margin: 0 auto;
+  }
+}
 
 .auth .conditions-form {
   padding-left: 15px;
@@ -189,6 +196,11 @@ body.position-left {
   padding-top: 25px;
   padding-bottom: 10px;
   font-size: 1.3em;
+}
+@media (max-width: 780px) and (min-width: 370px) {
+  .auth .conditions-form .form-header {
+    font-size: 1.5em;
+  }
 }
 .auth .conditions-form .group-form {
   margin: 0 auto;
@@ -247,7 +259,7 @@ body.position-left {
 .auth-navbar {
   display: flex;
   width: 100%;
-  background: transparent;
+  background: #ffffff;
   height: 100%;
   /* Sidebar Visible only 480px*/
 }
@@ -273,15 +285,17 @@ body.position-left {
   /* Main-Nav hidden only max 480px */
 }
 .auth-navbar .navbar-content .navbar-header {
+  font-size: 1.5em;
   display: flex;
   align-items: center;
 }
-.auth-navbar .navbar-content .navbar-header a {
-  font-size: 1.3rem;
-  font-weight: 400;
-}
 .auth-navbar .navbar-content .navbar-header .icons::before {
-  font-size: 2.2rem;
+  font-size: 1.5em;
+}
+@media (min-width: 2000px) {
+  .auth-navbar .navbar-content .navbar-header .icons::before {
+    font-size: 1.8em;
+  }
 }
 .auth-navbar .navbar-content .nav-links {
   margin: 0;
@@ -289,6 +303,13 @@ body.position-left {
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  font-size: 18px;
+  font-weight: 300;
+}
+@media (min-width: 2000px) {
+  .auth-navbar .navbar-content .nav-links {
+    font-size: 20px;
+  }
 }
 .auth-navbar .navbar-content .nav-links .links {
   padding-left: 0.5rem;
@@ -337,6 +358,7 @@ body.position-left {
 .auth-navbar .sidebar {
   position: fixed;
   background: #ffffff;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.13);
   height: 100%;
   width: 270px;
   left: 0;

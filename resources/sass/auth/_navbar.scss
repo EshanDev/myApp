@@ -3,7 +3,7 @@
 .auth-navbar {
     display: flex;
     width: 100%;
-    background: transparent;
+    background: #ffffff;
     height: 100%;
     @include breakpoint(1200px, min)
     {padding-top: 50px;}
@@ -27,16 +27,16 @@
         height: 100%;
 
         .navbar-header {
-            a {
-                font-size: 1.3rem;
-                font-weight: 400;
-            }
-
+            font-size: 1.5em;
             display: flex;
             align-items: center;
 
             .icons::before {
-                font-size: 2.2rem;
+                font-size: 1.5em;
+                @include breakpoint(2000px, min)
+                {
+                    font-size: 1.8em;
+                }
             }
         }
 
@@ -46,6 +46,12 @@
             list-style-type: none;
             display: flex;
             flex-direction: row;
+            font-size: 18px;
+            font-weight: 300;
+            @include breakpoint(2000px, min)
+            {
+                font-size: 20px;
+            }
 
             .links {
                 padding-left: .5rem;
@@ -119,6 +125,7 @@
 
         position: fixed;
         background: $white;
+        box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.13);
         height: 100%;
         width: 270px;
         left: 0;

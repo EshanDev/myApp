@@ -14,7 +14,20 @@ class AuthController extends Controller
 
     public function show_register_form()
     {
-        return view('system.registration');
+        return view('system.auth');
+    }
+
+    public function verify_coded(Request $request)
+    {
+        $code = $request->input('student_code');
+        $email = $request->input('student_email');
+
+        $data = array(
+          'code' => $code,
+          'email' => $email
+        );
+
+        return redirect()->route('auth.register', $data);
     }
 
     public function create_registration_code(Request $request)

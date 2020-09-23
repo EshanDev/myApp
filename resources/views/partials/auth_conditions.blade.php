@@ -1,9 +1,10 @@
 <div class="auth container-fluid">
     <div class="conditions-form">
         <div class="form-header">
-            <div class="text-center">กรอกข้อมูลเพื่อรับรหัสยืนยันสิทธิ์การลงทะเบียน</div>
+            <div class="text-center">กรอกข้อมูลเพื่อรับรหัสลงทะเบียน</div>
         </div>
-        <form action="#" class="form" id="conditions_form">
+        <form action="{{route('auth.coded.verify')}}" class="form" id="conditions_form" method="POST">
+            @csrf
             <div class="group-form">
                 <div class="form-group">
                     <label for="student_code">ระบุรหัสนักศึกษา</label>

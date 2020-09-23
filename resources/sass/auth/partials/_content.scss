@@ -161,6 +161,7 @@
             /* Conditions Header */
             .conditions-header{
                 font-size: 1.5em;
+                margin-bottom: 10px;
             }
 
 
@@ -168,7 +169,7 @@
             .conditions-item{
                 font-size: 18px;
                 font-weight: 300;
-                padding-left: 25px;
+                //padding-left: 25px;
                 text-indent: 30px;
             }
         }
@@ -218,6 +219,16 @@
                 width: 900px;
                 margin: 0 auto;
             }
+        }
+    }
+
+
+    @include breakpoint(2000px, min)
+    {
+        .content{
+            padding-top: 90px;
+            width: 1000px;
+            margin: 0 auto;
         }
     }
 }

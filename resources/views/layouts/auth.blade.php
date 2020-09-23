@@ -28,7 +28,11 @@
     </header>
     <div class="main">
         <main id="app">
-        @include('.partials.auth_content')
+            @if (Route::current()->getName() == 'auth.register')
+                @include('.partials.verify_coded')
+            @else
+                @include('.partials.auth_content')
+            @endif
         </main>
         <footer>&copy; {{ date('Y') }} {{ config('app.name') }} All right reserved</footer>
     </div>
