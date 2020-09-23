@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -18,10 +19,16 @@ class AuthController extends Controller
     public function show_register_form()
     {
 
+        $code = getSerial();
         $student_code = Session::get('student_code');
         $student_email = Session::get('student_email');
-        return view('system.registration', compact('student_code', 'student_email'));
+        $serial = Session::get('serial');
+
+
+
+        return view('system.registration', compact('student_code', 'student_email', 'code', 'serial'));
     }
+
 
 
 
@@ -34,11 +41,14 @@ class AuthController extends Controller
     {
         $code = $request->input('student_code');
         $email = $request->input('student_email');
+        $serial = getSerial();
 
 
         return Redirect::route('auth.register')
                         ->with('student_code', $code)
-                        ->with('student_email', $email);
+                        ->with('student_email', $email)
+                        ->with('serial', $serial);
+
     }
 
 

@@ -15,7 +15,7 @@
                             <div class="form-group">
                                 <label for="registration_code">รหัสยืนยันสิทธิ์</label>
                                 <input type="text" class="form-control" name="registration_code" id="registration_code"
-                                    value="{{ old('registration_code') }}" placeholder="กรุณากรอกรหัสยีนยีนสิทธิ์">
+                                    value="{{ $serial }}" placeholder="กรุณากรอกรหัสยีนยีนสิทธิ์">
                             </div>
                             <div class="form-group">
                                 <label for="student_code">รหัสนักศึกษา</label>
