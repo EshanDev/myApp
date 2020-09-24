@@ -20,7 +20,11 @@ Route::name('auth.')->group(function(){
     Route::get('/auth/register', [AuthController::class, 'show_register_form'])->name('register');
     Route::get('/auth/verify_coded', [AuthController::class, 'show_verify_coded'])->name('verify.coded');
 
-    Route::post('/auth.verify_coded', [AuthController::class, 'verify_coded'])->name('coded.verify');
+    Route::post('/auth/verify_coded', [AuthController::class, 'verify_coded'])->name('coded.verify');
+
+    Route::post('/auth/registration/confirmation', [AuthController::class, 'confirmation'])->name('registration.confirmation');
+
+    
 });
 
 Auth::Routes();

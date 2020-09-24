@@ -71,16 +71,3 @@
 @include('partials.auth_conditions')
 
 
-
-@section('script')
-    <script>
-
-        window.setTimeout(function() {
-            $(".alert").fadeTo(500, 0).slideUp(500, function(){
-                $(this).remove();
-            });
-        }, 30000);
-
-    </script>
-@endsection
-

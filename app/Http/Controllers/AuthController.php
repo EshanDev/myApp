@@ -4,18 +4,24 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
+
+    // index Authentication
     public function index()
     {
-        return view('system.auth');
+        return view('system.auth', ['route'=>'default']);
     }
 
 
+
+    //Show the Registration Form.
     public function show_register_form()
     {
 
@@ -24,16 +30,8 @@ class AuthController extends Controller
         $student_email = Session::get('student_email');
         $serial = Session::get('serial');
         $username = generateUserName();
-
-
-
-        return view('system.registration', compact('student_code', 'student_email', 'code', 'serial', 'username'));
+        return view('system.auth', ['route'=>'register'], compact('student_code', 'student_email', 'code', 'serial', 'username'));
     }
-
-
-
-
-
 
 
 
@@ -46,42 +44,22 @@ class AuthController extends Controller
 
 
         return Redirect::route('auth.register')
-                        ->with('student_code', $code)
-                        ->with('student_email', $email)
-                        ->with('serial', $serial);
-
+            ->with('student_code', $code)
+            ->with('student_email', $email)
+            ->with('serial', $serial);
     }
 
 
 
+    // Check Confirmations Data Before Submit to databae.
+    public function confirmation (Request $request) {
 
 
+        $data['confirmed'] = $request->except('_token');
+        return view('system.auth', ['route'=>'confirmed'], $data);
 
 
-
-
-
-
-    public function create_registration_code(Request $request)
-    {
-        return response()->json($request->all());
     }
 
 
-    public function verify_email(Request $request)
-    {
-        return response()->json($request->all());
-    }
-
-
-    public function verify_student_code(Request $request)
-    {
-        return response()->json($request->all());
-    }
-
-
-    public function verify_registration_code(Request $request)
-    {
-        return response()->json($request->all());
-    }
 }

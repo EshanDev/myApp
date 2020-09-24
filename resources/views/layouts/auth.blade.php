@@ -23,16 +23,13 @@
 </head>
 <body id="body">
 
+
     <header>
-        @include('.partials.auth_navbar')
+        @yield('navbar')
     </header>
     <div class="main">
         <main id="app">
-            @if (Route::current()->getName() == 'auth.register')
-                @include('.partials.verify_coded')
-            @else
-                @include('.partials.auth_content')
-            @endif
+            @yield('main-app')
         </main>
         <footer>&copy; {{ date('Y') }} {{ config('app.name') }} All right reserved</footer>
     </div>

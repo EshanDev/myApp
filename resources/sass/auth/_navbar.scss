@@ -6,7 +6,9 @@
     background: #ffffff;
     height: 100%;
     @include breakpoint(1200px, min)
-    {padding-top: 50px;}
+    {
+        margin-top: 50px;
+    }
 
 
     a {

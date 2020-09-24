@@ -1,4 +1,22 @@
 .auth {
+
+    .content{
+        @include breakpoint(2000px, min){
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .content-header{
+            @include breakpoint(1200px, min){
+                font-size: 3em;
+            }
+
+        }
+    }
+    &.verify-coded-content{
+        .verify-coded{
+
+        }
+    }
     .verify-coded {
         max-width: 80%;
         margin: 0 auto;
@@ -28,5 +46,17 @@
                 }
             }
         }
+
+
+
+        .register-btn{
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            input{
+                min-width: 200px;
+            }
+        }
+
     }
 }

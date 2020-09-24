@@ -1,14 +1,14 @@
-<div class="auth container-fluid">
+<div class="auth verify-coded-content container-fluid">
     <div class="content">
         <div class="content-header">
             <div class="text-center">
-                <div>ยืนยันรหัสลงทะเบียน</div>
+                <div>ระบบลงทะเบียน</div>
             </div>
         </div>
 
         <div class="verify-coded">
-            <form action="#" class="verify-coded-form">
-
+            <form action="{{ route('auth.registration.confirmation') }}" method="post" class="verify-coded-form">
+                @csrf
                 <!-- Form Group One -->
 
                 <div class="group-form">
@@ -57,8 +57,8 @@
 
                             <div class="form-group">
                                 <label for="student_faculty">คณะ</label>
-                                <input type="text" class="form-control" name="student_faculy"
-                                    value="{{ old('student_faculy') }}" placeholder="คณะที่กำลังศึกษา">
+                                <input type="text" class="form-control" name="student_faculty"
+                                    value="{{ old('student_faculty') }}" placeholder="คณะที่กำลังศึกษา">
                             </div>
 
                         </div>
@@ -76,7 +76,7 @@
                         <div class="grid-container">
                             <div class="form-group">
                                 <label for="name">รหัสผู้ใช้งาน</label>
-                                <input type="text" name="name" class="form-control" value="{{ $username }}"
+                                <input type="text" name="name" class="form-control" value="{{ old('name') }}"
                                     placeholder="กำหนดรหัสผู้ใช้งาน">
                             </div>
                             <div class="form-group">
@@ -95,6 +95,10 @@
                 </div>
 
                 <!-- End Form Group Three -->
+
+                <div class="register-btn">
+                    <input type="submit" class="btn btn-outline-secondary btn-lg" value="ส่งข้อมูล">
+                </div>
 
             </form>
         </div>

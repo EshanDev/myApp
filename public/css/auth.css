@@ -34,7 +34,7 @@ body header {
   display: flex;
   align-items: center;
 }
-@media (min-width: 2000px) {
+@media (min-width: 1200px) {
   body header {
     height: 100px;
   }
@@ -249,6 +249,17 @@ body.position-left {
   }
 }
 
+@media (min-width: 2000px) {
+  .auth .content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .auth .content .content-header {
+    font-size: 3em;
+  }
+}
 .auth .verify-coded {
   max-width: 80%;
   margin: 0 auto;
@@ -290,6 +301,14 @@ body.position-left {
   font-weight: 200;
   color: #8c8c8c;
 }
+.auth .verify-coded .register-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.auth .verify-coded .register-btn input {
+  min-width: 200px;
+}
 
 /* Mixins A Breakpoint */
 .auth-navbar {
@@ -301,7 +320,7 @@ body.position-left {
 }
 @media (min-width: 1200px) {
   .auth-navbar {
-    padding-top: 50px;
+    margin-top: 50px;
   }
 }
 .auth-navbar a {
