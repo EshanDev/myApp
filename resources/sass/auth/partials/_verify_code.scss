@@ -11,12 +11,17 @@
             }
 
         }
-    }
-    &.verify-coded-content{
-        .verify-coded{
 
+
+
+        .verify-coded-form{
+            input:focus{
+                outline: none;
+            }
         }
+
     }
+
     .verify-coded {
         max-width: 80%;
         margin: 0 auto;

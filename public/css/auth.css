@@ -260,6 +260,9 @@ body.position-left {
     font-size: 3em;
   }
 }
+.auth .content .verify-coded-form input:focus {
+  outline: none;
+}
 .auth .verify-coded {
   max-width: 80%;
   margin: 0 auto;

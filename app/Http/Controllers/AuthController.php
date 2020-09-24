@@ -25,15 +25,22 @@ class AuthController extends Controller
     public function show_register_form()
     {
 
+        if(Session::get('send_code')){
+            $data = Session::get('send_code');
+            $registration_code = getSerial();
+            $username = generateUserName();
 
-        $data = Session::get('send_code');
-
-       
-        if (empty($data['student_code'])){
-            return 'empty';
+            return view('system.auth', ['route'=>'register'], compact('data', 'registration_code', 'username'));
         } else{
-            return $data['student_code'];
+            $data = [
+              'student_code' => null,
+                'student_email' => null,
+            ];
+            $registration_code = getSerial();
+            $username = generateUserName();
+            return view('system.auth', ['route'=> 'register'], compact('data','registration_code', 'username'));
         }
+
 
 //        $code = getSerial();
 //        $student_code = Session::get('student_code');

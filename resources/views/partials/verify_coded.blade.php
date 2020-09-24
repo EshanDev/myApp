@@ -8,7 +8,7 @@
 
         <div class="verify-coded">
 
-            <form action="{{ route('auth.registration.confirmation') }}" method="post" class="verify-coded-form">
+            <form action="{{ route('auth.registration.confirmation') }}" method="post" class="verify-coded-form" autocomplete="off">
                 @csrf
                 <!-- Form Group One -->
 
@@ -18,19 +18,19 @@
                         <div class="grid-container">
                             <div class="form-group">
                                 <label for="registration_code">รหัสยืนยันสิทธิ์</label>
-                                <input type="text" class="form-control" name="registration_code" value="@if(\Illuminate\Support\Facades\Session::get('success')) {{}} @endif"
+                                <input type="text" class="form-control" name="registration_code" value="{{$registration_code}}"
                                     placeholder="กรุณากรอกรหัสยีนยีนสิทธิ์">
                             </div>
                             <div class="form-group">
                                 <label for="student_code">รหัสนักศึกษา</label>
-                                <input type="text" name="student_code" class="form-control" value="{{ $student_code }}"
+                                <input type="text" name="student_code" class="form-control" value="{{$data['student_code']}}"
                                     placeholder="ระบุรหัสนักศึกษา">
                             </div>
 
                             <div class="form-group">
                                 <label for="student_email">ที่อยู่อีเมล์</label>
                                 <input type="email" name="student_email" class="form-control"
-                                    value="{{ $student_email }}" placeholder="ระบุที่อยู่อีเมล์">
+                                    value="{{$data['student_email']}}" placeholder="ระบุที่อยู่อีเมล์">
                             </div>
                         </div>
                     </fieldset>
@@ -77,7 +77,7 @@
                         <div class="grid-container">
                             <div class="form-group">
                                 <label for="name">รหัสผู้ใช้งาน</label>
-                                <input type="text" name="name" class="form-control" value="{{ old('name') }}"
+                                <input type="text" name="name" class="form-control" value="{{ $username}}"
                                     placeholder="กำหนดรหัสผู้ใช้งาน">
                             </div>
                             <div class="form-group">
