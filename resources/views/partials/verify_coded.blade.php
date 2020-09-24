@@ -7,6 +7,7 @@
         </div>
 
         <div class="verify-coded">
+
             <form action="{{ route('auth.registration.confirmation') }}" method="post" class="verify-coded-form">
                 @csrf
                 <!-- Form Group One -->
@@ -17,7 +18,7 @@
                         <div class="grid-container">
                             <div class="form-group">
                                 <label for="registration_code">รหัสยืนยันสิทธิ์</label>
-                                <input type="text" class="form-control" name="registration_code" value="{{ $serial }}"
+                                <input type="text" class="form-control" name="registration_code" value="@if(\Illuminate\Support\Facades\Session::get('success')) {{}} @endif"
                                     placeholder="กรุณากรอกรหัสยีนยีนสิทธิ์">
                             </div>
                             <div class="form-group">

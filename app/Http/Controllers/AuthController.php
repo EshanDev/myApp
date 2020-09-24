@@ -25,28 +25,52 @@ class AuthController extends Controller
     public function show_register_form()
     {
 
-        $code = getSerial();
-        $student_code = Session::get('student_code');
-        $student_email = Session::get('student_email');
-        $serial = Session::get('serial');
-        $username = generateUserName();
-        return view('system.auth', ['route'=>'register'], compact('student_code', 'student_email', 'code', 'serial', 'username'));
+
+        $data = Session::get('send_code');
+
+       
+        if (empty($data['student_code'])){
+            return 'empty';
+        } else{
+            return $data['student_code'];
+        }
+
+//        $code = getSerial();
+//        $student_code = Session::get('student_code');
+//        $student_email = Session::get('student_email');
+//        $serial = Session::get('serial');
+//        $username = generateUserName();
+//        return view('system.auth', ['route'=>'register'], compact('student_code', 'student_email', 'code', 'serial', 'username'));
     }
 
 
 
     // Verify Registration Code and Redirect to Registration Page.
+
+
+    // Send Registration Code and Redirect to Registration Page.
+
+    public function send_registration_code(Request $request)
+        {
+            $data = $request->except('_token');
+            return Redirect::route('auth.register')->with('send_code', $data);
+        }
+
+
+
     public function verify_coded(Request $request)
     {
         $code = $request->input('student_code');
         $email = $request->input('student_email');
         $serial = getSerial();
 
+        $data['verify'] = $request->all();
+        return Redirect::route('auth.register', $data);
 
-        return Redirect::route('auth.register')
-            ->with('student_code', $code)
-            ->with('student_email', $email)
-            ->with('serial', $serial);
+//        return Redirect::route('auth.register')
+//            ->with('student_code', $code)
+//            ->with('student_email', $email)
+//            ->with('serial', $serial);
     }
 
 
