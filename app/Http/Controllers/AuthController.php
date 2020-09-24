@@ -62,4 +62,17 @@ class AuthController extends Controller
     }
 
 
+
+    // Edit and Confirm Register Data
+
+    public function edited_register()
+    {
+        return "OK";
+    }
+
+    public function confirmed_register($data)
+    {
+        dd($data);
+    }
+
 }

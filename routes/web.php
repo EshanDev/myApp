@@ -24,7 +24,11 @@ Route::name('auth.')->group(function(){
 
     Route::post('/auth/registration/confirmation', [AuthController::class, 'confirmation'])->name('registration.confirmation');
 
-    
+
+    // Edit Register data and Confirm Register data.
+    Route::get('/auth/confirm_register/{data?}', [AuthController::class, 'confirmed_register'])->name('confirmed.register');
+    Route::get('/auth/edit_register', [AuthController::class, 'edited_register'])->name('edited.register');
+
 });
 
 Auth::Routes();
