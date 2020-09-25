@@ -36,18 +36,10 @@ class AuthController extends Controller
               'student_code' => null,
                 'student_email' => null,
             ];
-            $registration_code = getSerial();
-            $username = generateUserName();
+            $registration_code = null;
+            $username = null;
             return view('system.auth', ['route'=> 'register'], compact('data','registration_code', 'username'));
         }
-
-
-//        $code = getSerial();
-//        $student_code = Session::get('student_code');
-//        $student_email = Session::get('student_email');
-//        $serial = Session::get('serial');
-//        $username = generateUserName();
-//        return view('system.auth', ['route'=>'register'], compact('student_code', 'student_email', 'code', 'serial', 'username'));
     }
 
 

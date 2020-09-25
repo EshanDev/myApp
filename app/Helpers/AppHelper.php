@@ -24,13 +24,13 @@ if (!function_exists('getSerial')){
 }
 
 if(!function_exists('generateUserName')){
-    function generateUserName($length = 10) {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    function generateUserName($length = 5) {
+        $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
         for ($i = 0; $i < $length; $i++) {
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
-        return "USER-".$randomString;
+        return "SDL-".$randomString;
     }
 }

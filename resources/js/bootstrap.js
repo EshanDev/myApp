@@ -12,6 +12,7 @@ try {
 
     require('bootstrap');
     require('jquery-validation');
+
 } catch (e) {}
 
 /**

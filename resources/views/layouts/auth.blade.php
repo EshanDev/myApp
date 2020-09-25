@@ -38,6 +38,7 @@
 <!-- Script -->
 <script src="{{mix('js/app.js')}}"></script>
 <script src="{{ asset('vendor/fontawesome/js/all.js') }}"></script>
+<script src="{{ asset('js/validate.js') }}"></script>
 @yield('script')
 </body>
 </html>

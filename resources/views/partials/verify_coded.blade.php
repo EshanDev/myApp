@@ -8,7 +8,7 @@
 
         <div class="verify-coded">
 
-            <form action="{{ route('auth.registration.confirmation') }}" method="post" class="verify-coded-form" autocomplete="off">
+            <form action="{{ route('auth.registration.confirmation') }}" method="post" class="verify-coded-form" autocomplete="off" id="registration_form">
                 @csrf
                 <!-- Form Group One -->
 
@@ -23,14 +23,14 @@
                             </div>
                             <div class="form-group">
                                 <label for="student_code">รหัสนักศึกษา</label>
-                                <input type="text" name="student_code" class="form-control" value="{{$data['student_code']}}"
+                                <input type="text" name="student_code" class="form-control" @if($data['student_code'] !== NULL) disabled @endif value="{{$data['student_code']}}"
                                     placeholder="ระบุรหัสนักศึกษา">
                             </div>
 
                             <div class="form-group">
                                 <label for="student_email">ที่อยู่อีเมล์</label>
                                 <input type="email" name="student_email" class="form-control"
-                                    value="{{$data['student_email']}}" placeholder="ระบุที่อยู่อีเมล์">
+                                    value="{{$data['student_email']}}" placeholder="ระบุที่อยู่อีเมล์" @if($data['student_email'] !== NULL) disabled @endif>
                             </div>
                         </div>
                     </fieldset>
@@ -76,18 +76,18 @@
                         <legend class="w-auto legend">ส่วนที่ 3 สร้างรหัสผู้ใช้งาน</legend>
                         <div class="grid-container">
                             <div class="form-group">
-                                <label for="name">รหัสผู้ใช้งาน</label>
+                                <label for="name">รหัสผู้ใช้งาน @if($username !== NULL)<span class="text-danger">***เปลี่ยนได้</span> @endif</label>
                                 <input type="text" name="name" class="form-control" value="{{ $username}}"
                                     placeholder="กำหนดรหัสผู้ใช้งาน">
                             </div>
                             <div class="form-group">
                                 <label for="password">รหัสผ่าน</label>
-                                <input type="password" name="password" placeholder="กำหนดรหัสผ่านใหม่"
+                                <input type="password" name="password" id="password" placeholder="กำหนดรหัสผ่านใหม่"
                                     class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="password-confirm">ยืนยันรหัสผ่าน</label>
-                                <input type="password-confirm" name="password_confirmation"
+                                <input type="password" name="password_confirmation"
                                     placeholder="ยืนยันรหัสผ่านอีกครั้ง" class="form-control">
                             </div>
                         </div>
@@ -107,3 +107,4 @@
 
     </div>
 </div>
+

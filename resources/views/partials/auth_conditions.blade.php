@@ -27,29 +27,6 @@
 
 @section('script')
     <script>
-        var validator = $('#conditions_form').validate({
-           rules: {
-               student_code : {
-                   required: true,
-               },
-               student_email: {
-                   required: true,
-               }
-           },
-            messages: {
-               student_code: {
-                   required: "กรุณากรอกรหัสนักศึกษา",
-               },
-                student_email: {
-                   required: "กรุณากรอกที่อยู่อีเมล์",
-                },
-
-
-            },
-
-        });
-
-
         window.setTimeout(function() {
             $(".alert").fadeTo(500, 0).slideUp(500, function(){
                 $(this).remove();
