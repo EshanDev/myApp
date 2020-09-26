@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -30,7 +31,7 @@ class AuthController extends Controller
             $registration_code = getSerial();
             $username = generateUserName();
 
-            return view('system.auth', ['route'=>'register'], compact('data', 'registration_code', 'username'));
+            return view('system.auth', ['route'=>'register'], compact('data', 'registration_code', 'username'))->with('success', 'รหัสลงทะเบียนได้ส่งไปยังที่อยู่อีเมล์เรียบร้อย');
         } else{
             $data = [
               'student_code' => null,
@@ -38,7 +39,7 @@ class AuthController extends Controller
             ];
             $registration_code = null;
             $username = null;
-            return view('system.auth', ['route'=> 'register'], compact('data','registration_code', 'username'));
+            return view('system.auth', ['route'=> 'register'], compact('data','registration_code', 'username'))->with('status', 'Profile updated!');;
         }
     }
 
@@ -51,7 +52,11 @@ class AuthController extends Controller
 
     public function send_registration_code(Request $request)
         {
-            $data = $request->except('_token');
+            $collection = collect(['student_code' => $request->input('student_code'), 'student_email' => $request->input('student_email')]);
+            $serial = getSerial();
+            $data = $collection->merge(['registration_code' => $serial]);
+
+
             return Redirect::route('auth.register')->with('send_code', $data);
         }
 
@@ -78,8 +83,10 @@ class AuthController extends Controller
     public function confirmation (Request $request) {
 
 
-        $data['confirmed'] = $request->except('_token');
-        return view('system.auth', ['route'=>'confirmed'], $data);
+//        $data['confirmed'] = $request->except('_token');
+//        return view('system.auth', ['route'=>'confirmed'], $data);
+
+        dd($request->all());
 
 
     }

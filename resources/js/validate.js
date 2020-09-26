@@ -32,6 +32,12 @@ $(condition).validate({
 const registration = document.getElementById('registration_form');
 $(registration).validate({
     rules: {
+        student_code: {
+            required: true,
+        },
+        student_email: {
+            required: true,
+        },
         student_name: {
             required: true,
         },
@@ -49,6 +55,13 @@ $(registration).validate({
             required: true,
             equalTo: "#password",
         },
+
+        registration_code: {
+            required: true,
+        },
+        name: {
+            required: true,
+        },
     },
     messages: {
         student_name: {
@@ -65,8 +78,21 @@ $(registration).validate({
         },
 
         password_confirmation: {
-            required: "กรุณากรอกข้อมูล",
+            required: "ระบุรหัสผ่านอีกครั้ง",
             equalTo: "รหัสผ่านไม่ตรงกัน",
+        },
+        registration_code: {
+            required: "กรุณากรอกรหัสลงทะเบียน",
+        },
+        student_email: {
+            required: "กรุณากรอกอีเมล์",
+        },
+        student_code: {
+            required: "กรุณากรอกรหัสนักศึกษา",
+        },
+        name: {
+            required: "กรุณาตั้งชื่อผู้ใช้งาน",
         },
     }
 });
+

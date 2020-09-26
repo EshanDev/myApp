@@ -3,7 +3,7 @@
         <div class="form-header">
             <div class="text-center">กรอกข้อมูลเพื่อรับรหัสลงทะเบียน</div>
         </div>
-        <form action="{{route('auth.registration_code_send')}}" class="form" id="conditions_form" method="POST">
+        <form action="{{route('auth.registration_code_send')}}" class="form" id="conditions_form" method="POST" autocomplete="off">
             @csrf
             <div class="group-form">
                 <div class="form-group">
@@ -27,6 +27,13 @@
 
 @section('script')
     <script>
+        $(document).ready(function () {
+            $('form').bind("keypress", function (e) {
+                if(e.keyCode == 13){
+                    return false;
+                }
+            })
+        })
         window.setTimeout(function() {
             $(".alert").fadeTo(500, 0).slideUp(500, function(){
                 $(this).remove();

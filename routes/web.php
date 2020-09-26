@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/cache_clear', function(){
+    Artisan::call('cache:clear');
+    return "Cache is Cleared";
+});
+
 
 Route::name('auth.')->group(function(){
     Route::get('/auth', [AuthController::class, 'index'] )->name('home');
