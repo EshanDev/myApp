@@ -28,6 +28,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected $namespace ='App\Http\Controllers';
 
+    protected $reference = 'App\Http\Controllers\Reference';
     /**
      * Define your route model bindings, pattern filters, etc.
      *
@@ -51,6 +52,11 @@ class RouteServiceProvider extends ServiceProvider
                 ->middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/database.php'));
+
+            Route::prefix('test')
+                ->middleware('web')
+                ->namespace($this->reference)
+                ->group(base_path('routes/test.php'));
         });
     }
 

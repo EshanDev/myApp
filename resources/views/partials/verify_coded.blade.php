@@ -6,6 +6,21 @@
             </div>
         </div>
 
+        @if($data['student_code'] !== NULL)
+            <div class="alert alert-success" role="alert">
+                <div class="text-center">{{__('รหัสลงทะเบียนได้ส่งไปยังที่อยู่อีเมล์แล้ว')}}</div>
+            </div>
+
+            @section('script')
+            <script type="text/javascript">
+                $('.alert').delay(4000).slideUp(200, function(){
+                    $(this).alert('close');
+                });
+
+
+            </script>
+                @endsection
+        @endif
 
         <div class="verify-coded">
 

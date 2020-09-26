@@ -3,7 +3,7 @@
         <div class="form-header">
             <div class="text-center">กรอกข้อมูลเพื่อรับรหัสลงทะเบียน</div>
         </div>
-        <form action="{{route('auth.registration_code_send')}}" class="form" id="conditions_form" method="POST" autocomplete="off">
+        <form action="{{route('auth.registration_code_send')}}" class="form" id="conditions_form" method="POST" >
             @csrf
             <div class="group-form">
                 <div class="form-group">
