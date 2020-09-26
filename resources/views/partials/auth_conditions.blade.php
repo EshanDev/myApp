@@ -8,11 +8,11 @@
             <div class="group-form">
                 <div class="form-group">
                     <label for="student_code">ระบุรหัสนักศึกษา</label>
-                    <input type="text" class="form-control" name="student_code" id="student_code">
+                    <input type="text" class="form-control" name="student_code" id="student_code" value="{{old('student_code')}}">
                 </div>
                 <div class="form-group">
                     <label for="student_email">ระบุที่อยู่อีเมล์</label>
-                    <input type="email" class="form-control" name="student_email" id="student_email">
+                    <input type="email" class="form-control" name="student_email" id="student_email" value="{{old('student_email')}}">
                 </div>
             </div>
             <div class="form-footer">

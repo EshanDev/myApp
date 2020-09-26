@@ -8,6 +8,8 @@ $(condition).validate({
     rules: {
         student_code: {
             required: true,
+            number: true,
+            maxlength: 10,
         },
         student_email: {
             required: true,
@@ -16,6 +18,8 @@ $(condition).validate({
     messages: {
         student_code: {
             required: "กรุณากรอกรหัสนักศึกษา",
+            number: "รูปแบบรหัสผ่านไม่ถูกต้อง",
+            maxlength: "รูปแบบรหัสผ่านไม่ถูกต้อง",
         },
         student_email: {
             required: "กรุณากรอกที่อยู่อีเมล์",

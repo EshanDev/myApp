@@ -8,7 +8,7 @@
 
         @if($data['student_code'] !== NULL)
             <div class="alert alert-success" role="alert">
-                <div class="text-center">{{__('รหัสลงทะเบียนได้ส่งไปยังที่อยู่อีเมล์แล้ว')}}</div>
+                <div class="text-center">รหัสยืนยันสิทธิ์ได้ส่งไปยัง {{$data['student_email']}} แล้ว</div>
             </div>
 
             @section('script')

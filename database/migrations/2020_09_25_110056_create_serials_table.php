@@ -17,6 +17,7 @@ class CreateSerialsTable extends Migration
             $table->id();
             $table->string('serials')->nullable();
             $table->string('count')->nullable();
+            $table->timestamps();
         });
     }
 

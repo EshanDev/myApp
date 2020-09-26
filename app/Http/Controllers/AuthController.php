@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Serials;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 class AuthController extends Controller
@@ -55,9 +57,29 @@ class AuthController extends Controller
             $collection = collect(['student_code' => $request->input('student_code'), 'student_email' => $request->input('student_email')]);
             $serial = getSerial();
             $data = $collection->merge(['registration_code' => $serial]);
+            $count = DB::table('serials')->count();
 
 
-            return Redirect::route('auth.register')->with('send_code', $data);
+            // Create Validator.
+            $validator = Validator::make($request->all(), [
+               'student_code' => 'required|digits:10|string',
+               'student_email' => 'required|email|string|max:255',
+            ]);
+
+            // Check Error.
+            if($validator->fails()){
+                return back()->withInput();
+            } else{
+
+                $insertData = new Serials();
+                $insertData->serials = $data['registration_code'];
+                $insertData->count = $count;
+
+                $insertData->save();
+
+                return Redirect::route('auth.register')->with('send_code', $data);
+            }
+
         }
 
 
