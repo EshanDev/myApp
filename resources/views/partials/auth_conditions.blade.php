@@ -12,7 +12,7 @@
                 </div>
                 <div class="form-group">
                     <label for="student_email">ระบุที่อยู่อีเมล์</label>
-                    <input type="email" class="form-control" name="student_email" id="student_email" value="{{old('student_email')}}">
+                    <input type="email" class="form-control" name="student_email" id="student_email" value="{{old('student_email')}}" >
                 </div>
             </div>
             <div class="form-footer">
@@ -39,5 +39,34 @@
                 $(this).remove();
             });
         }, 5000);
+
+
+        // Validate Condition Form.
+        jQuery('.form').validate({
+           rules: {
+               student_code: {
+                   required: true,
+               },
+               student_email: {
+                   required: true,
+                   email: true,
+
+                   remote: {
+                       url: "{{route('auth.verify.email')}}",
+                       type: "post",
+
+                       data: {
+                           _token: function()
+                           {
+                               return "{{csrf_token()}}";
+                           }
+                       }
+                   }
+
+               }
+
+           }
+        });
+
     </script>
 @endsection

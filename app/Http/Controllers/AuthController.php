@@ -57,7 +57,7 @@ class AuthController extends Controller
             $collection = collect(['student_code' => $request->input('student_code'), 'student_email' => $request->input('student_email')]);
             $serial = getSerial();
             $data = $collection->merge(['registration_code' => $serial]);
-            $count = DB::table('serials')->count();
+            $count = CountSerials();
 
 
             // Create Validator.
@@ -67,20 +67,23 @@ class AuthController extends Controller
             ]);
 
             // Check Error.
-            if($validator->fails()){
+            if($validator->fails())
+            {
                 return back()->withInput();
             } else{
-
                 $insertData = new Serials();
                 $insertData->serials = $data['registration_code'];
-                $insertData->count = $count;
-
-                $insertData->save();
-
-                return Redirect::route('auth.register')->with('send_code', $data);
+                $insertData->email = $data['student_email'];
+                if($count == 30){
+                    return back()->withErrors('จำนวนผู้ลงทะเบียบครบแล้ว');
+                } else{
+                    $insertData->save();
+                }
             }
-
+            return Redirect::route('auth.register')->with('send_code', $data);
         }
+
+
 
 
 
@@ -115,16 +118,22 @@ class AuthController extends Controller
 
 
 
-    // Edit and Confirm Register Data
 
-    public function edited_register()
+    // Verify Email
+    public function verify_email(Request $request)
     {
-        return "OK";
+        if($request->input('student_email') !== ''){
+            if ($request->input('student_email')){
+                $rule = array('student_email' => 'required|email|unique:serials');
+                $validator = Validator::make($request->all(), $rule);
+
+                if (!$validator){
+                    die('true');
+                }
+            }
+        } die('false');
     }
 
-    public function confirmed_register($data)
-    {
-        dd($data);
-    }
+
 
 }

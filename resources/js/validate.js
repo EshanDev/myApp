@@ -3,6 +3,7 @@ require('./bootstrap');
 
 // Validation
 //For Conditions System.
+
 const condition = document.getElementById('conditions_form');
 $(condition).validate({
     rules: {
@@ -13,6 +14,7 @@ $(condition).validate({
         },
         student_email: {
             required: true,
+            email: true,
         }
     },
     messages: {

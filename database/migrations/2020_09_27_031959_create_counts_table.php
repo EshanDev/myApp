@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSerialsTable extends Migration
+class CreateCountsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateSerialsTable extends Migration
      */
     public function up()
     {
-        Schema::create('serials', function (Blueprint $table) {
+        Schema::create('counts', function (Blueprint $table) {
             $table->id();
-            $table->string('serials')->nullable();
-            $table->string('email')->unique();
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ class CreateSerialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('serials');
+        Schema::dropIfExists('counts');
     }
 }

@@ -37,6 +37,11 @@ Route::name('auth.')->group(function(){
     Route::get('/auth/confirm_register/{data?}', [AuthController::class, 'confirmed_register'])->name('confirmed.register');
     Route::get('/auth/edit_register', [AuthController::class, 'edited_register'])->name('edited.register');
 
+
+
+    // Verify Email Address
+    Route::post('/auth/verify_email', [AuthController::class, 'verify_email'])->name('verify.email');
+
 });
 
 Auth::Routes();

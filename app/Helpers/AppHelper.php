@@ -34,3 +34,18 @@ if(!function_exists('generateUserName')){
         return "SDL-".$randomString;
     }
 }
+
+if(!function_exists('CountSerials')){
+    function CountSerials()
+    {
+        $serials = \Illuminate\Support\Facades\DB::table('serials')->count();
+        return $serials;
+    }
+}
+
+if(!function_exists('checkEmail')){
+    function checkEmail($email){
+        $Select_email = \Illuminate\Support\Facades\DB::table('serials')->where('email', $email)->first();
+        return $Select_email;
+    }
+}
